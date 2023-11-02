@@ -1,46 +1,26 @@
 /*
- * AppReducer
  *
- * The reducer takes care of our data. Using actions, we can
- * update our application state. To add a new action,
- * add it to the switch statement in the reducer function
+ * LanguageProvider reducer
  *
  */
 
 import produce from 'immer';
-import { LOAD_REPOS_SUCCESS, LOAD_REPOS, LOAD_REPOS_ERROR } from './constants';
 
-// The initial state of the App
+import { CHANGE_LOCALE } from './constants';
+import { DEFAULT_LOCALE } from '../../i18n';
+
 export const initialState = {
-  loading: false,
-  error: false,
-  currentUser: false,
-  userData: {
-    repositories: false,
-  },
+  locale: DEFAULT_LOCALE,
 };
 
 /* eslint-disable default-case, no-param-reassign */
-const appReducer = (state = initialState, action) =>
+const languageProviderReducer = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
-      case LOAD_REPOS:
-        draft.loading = true;
-        draft.error = false;
-        draft.userData.repositories = false;
-        break;
-
-      case LOAD_REPOS_SUCCESS:
-        draft.userData.repositories = action.repos;
-        draft.loading = false;
-        draft.currentUser = action.username;
-        break;
-
-      case LOAD_REPOS_ERROR:
-        draft.error = action.error;
-        draft.loading = false;
+      case CHANGE_LOCALE:
+        draft.locale = action.locale;
         break;
     }
   });
 
-export default appReducer;
+export default languageProviderReducer;

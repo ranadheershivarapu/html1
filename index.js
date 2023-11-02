@@ -1,77 +1,20 @@
-/*
- * FeaturePage
- *
- * List all the features
- */
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import 'antd/dist/reset.css'
+import '.././/../node_modules/bootstrap-icons/font/bootstrap-icons.css'
+import '.././/../node_modules/bootstrap/dist/css/bootstrap.css'
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-import H1 from 'components/H1';
-import messages from './messages';
-import List from './List';
-import ListItem from './ListItem';
-import ListItemTitle from './ListItemTitle';
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-export default function FeaturePage() {
-  return (
-    <div>
-      <Helmet>
-        <title>Feature Page</title>
-        <meta
-          name="description"
-          content="Feature page of React.js Boilerplate application"
-        />
-      </Helmet>
-      <H1>
-        <FormattedMessage {...messages.header} />
-      </H1>
-      <List>
-        <ListItem>
-          <ListItemTitle>
-            <FormattedMessage {...messages.scaffoldingHeader} />
-          </ListItemTitle>
-          <p>
-            <FormattedMessage {...messages.scaffoldingMessage} />
-          </p>
-        </ListItem>
-
-        <ListItem>
-          <ListItemTitle>
-            <FormattedMessage {...messages.feedbackHeader} />
-          </ListItemTitle>
-          <p>
-            <FormattedMessage {...messages.feedbackMessage} />
-          </p>
-        </ListItem>
-
-        <ListItem>
-          <ListItemTitle>
-            <FormattedMessage {...messages.routingHeader} />
-          </ListItemTitle>
-          <p>
-            <FormattedMessage {...messages.routingMessage} />
-          </p>
-        </ListItem>
-
-        <ListItem>
-          <ListItemTitle>
-            <FormattedMessage {...messages.networkHeader} />
-          </ListItemTitle>
-          <p>
-            <FormattedMessage {...messages.networkMessage} />
-          </p>
-        </ListItem>
-
-        <ListItem>
-          <ListItemTitle>
-            <FormattedMessage {...messages.intlHeader} />
-          </ListItemTitle>
-          <p>
-            <FormattedMessage {...messages.intlMessage} />
-          </p>
-        </ListItem>
-      </List>
-    </div>
-  );
-}
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
