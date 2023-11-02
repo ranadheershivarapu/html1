@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id-button{
+            color: red;
+
+        }
+        .class-button{
+            color: green;
+        }
+        .click{
+            color: blue;
+        }
+        .bag{
+            color: lightcoral;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        .wishlist{
+            color:green;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <script>
+         let welcome="hi friends";
+        let cart=0;
+        document.querySelector('.cart-summary').innerHTML=`your bag ${cart} items`;
+        document.write(welcome);
+
+       <hr noshade>
+    <button class="click">CLICK</button>
+    <button id="id-button">ID BUTTON</button>
+    <button class="class-button">CLASS BUTTON</button>
+    <p>Facebook is an online social media and social networking service owned by American technology giant Meta Platforms. 
+    Created in 2004 by Mark Zuckerberg with four other Harvard College students and room</p>
+    
+        <h2 class="cart-summary"></h2>
+        <button  class="bag" onclick="alert('bag sucessuful')">ADD TO BAG</button>
+    
+    
+        <button class="wishlist" onclick="alert('add wishlist')">&#10084;&nbsp; WISHLIST</button>
+
+        <h2 style="text-decoration: underline color( red green blue);">Variables</h2>
+
+        <div><b>let</b>: It is used to declare variables that are scoped to the block of code within which it
+is declared.</div>
+    </script>
+       
+
+
+</body>
+</html>
